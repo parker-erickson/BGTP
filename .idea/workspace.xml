@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e9c2c65-d603-49aa-afbf-90c492695a89" name="Default Changelist" comment="" />
+    <list default="true" id="7e9c2c65-d603-49aa-afbf-90c492695a89" name="Default Changelist" comment="added sql database" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +32,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -42,7 +47,24 @@
       <updated>1600986910475</updated>
       <workItem from="1600986911887" duration="1485000" />
       <workItem from="1600989445115" duration="22000" />
+      <workItem from="1600989469554" duration="747000" />
+      <workItem from="1601149554870" duration="2248000" />
     </task>
+    <task id="LOCAL-00001" summary="gernerated express application">
+      <created>1600989710775</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600989710775</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added sql database">
+      <created>1601226708546</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601226708546</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -60,15 +82,20 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gernerated express application" />
+    <MESSAGE value="added sql database" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sql database" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1202" y="393" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600986928142">
       <screen x="37" y="23" width="3403" height="1417" />
     </state>
     <state x="1202" y="393" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/980.1463.1440.877/37.23.3403.1417@37.23.3403.1417" timestamp="1600986928142" />
-    <state x="337" y="201" key="Vcs.Push.Dialog.v2" timestamp="1600987769131">
+    <state x="337" y="201" key="Vcs.Push.Dialog.v2" timestamp="1600989721458">
       <screen x="37" y="23" width="1403" height="877" />
     </state>
-    <state x="337" y="201" key="Vcs.Push.Dialog.v2/37.23.1403.877@37.23.1403.877" timestamp="1600987769131" />
+    <state x="337" y="201" key="Vcs.Push.Dialog.v2/37.23.1403.877@37.23.1403.877" timestamp="1600989721458" />
     <state x="467" y="357" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600987744577">
       <screen x="37" y="23" width="1403" height="877" />
     </state>
