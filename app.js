@@ -37,5 +37,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+//Console output
+app.listen(process.env.PORT, function() {
+  console.log("Express server is running...");
+});
+
+//opening server and opening listening channel
+var server = app.listen(8081, function() {
+  //opens server on port 3000, does stuff
+});
 
 module.exports = app;
