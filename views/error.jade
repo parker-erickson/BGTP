@@ -1,6 +1,9 @@
-extends layout
+extends templates/layout
 
 block content
+  includes templates/layout
   h1= message
   h2= error.status
   pre #{error.stack}
+  
+  
