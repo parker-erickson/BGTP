@@ -11,7 +11,7 @@ var cartRouter = require('./routes/cart');
 var productsRouter = require('./routes/products');
 var profileRouter = require('./routes/profile');
 var postRouter = require('./routes/post');
-var signupRouter = require('./routes/post');
+var signupRouter = require('./routes/signup');
 
 
 var app = express();
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login',loginRouter);
-app.use('/users', usersRouter);
+app.use('/userspage', usersRouter);
 app.use('/cart', cartRouter);
 app.use('/post', postRouter);
 app.use('/products',productsRouter);
