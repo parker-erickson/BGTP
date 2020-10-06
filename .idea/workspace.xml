@@ -11,14 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e9c2c65-d603-49aa-afbf-90c492695a89" name="Default Changelist" comment="added sql database">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/action.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/pages/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/login.jade" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.jade" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/signup.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.jade" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +121,10 @@
       <screen x="37" y="23" width="3403" height="1417" />
     </state>
     <state x="1202" y="393" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/980.1463.1440.877/37.23.3403.1417@37.23.3403.1417" timestamp="1600986928142" />
+    <state x="742" y="247" key="EditFileWatcherDialog" timestamp="1601934691551">
+      <screen x="38" y="23" width="1402" height="877" />
+    </state>
+    <state x="742" y="247" key="EditFileWatcherDialog/38.23.1402.877@38.23.1402.877" timestamp="1601934691551" />
     <state x="773" y="311" key="Vcs.Push.Dialog.v2" timestamp="1601226838135">
       <screen x="48" y="23" width="3392" height="1417" />
     </state>

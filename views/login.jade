@@ -1,24 +1,27 @@
-doctype html
-html
-    body
-        br
-        br
-        #login_box.container.d-flex.justify-content-center
-            #form_login.login-form.shadow.p-3.mb-5.bg-white.rounded
-                form
-                    h2.text-center Log in
-                    .form-group
-                        label(username) Username
-                        input.form-control(name='username', type='text')
+extends templates/layout
 
-                    br
+block content
+    includes templates/layout
+    html
+        body
+            br
+            br
+            #login_box.container.d-flex.justify-content-center
+                #form_login.login-form.shadow.p-3.mb-5.bg-white.rounded
+                    form
+                        h2.text-center Log in
+                        .form-group
+                            label(username) Username
+                            input.form-control(name='username', type='text')
 
-                    .form-group
-                        label(password) Password
+                        br
 
-                        input.form-control(name='password', type='password')
+                        .form-group
+                            label(password) Password
 
-                    br
+                            input.form-control(name='password', type='password')
 
-                    .form-group
-                        input.btn.btn-primary.btn-block(type='submit', value='Login', formaction='/action/login')
+                        br
+
+                        .form-group
+                            input.btn.btn-primary.btn-block(type='submit', value='Login', formaction='/action/login')

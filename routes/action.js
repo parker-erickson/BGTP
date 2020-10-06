@@ -28,6 +28,7 @@ router.get('/login', async function(req, res) {
                 req.err = error;
                 reject(error);
             } else {
+                console.log("worked!")
                 resolve(results);
             }
         });
