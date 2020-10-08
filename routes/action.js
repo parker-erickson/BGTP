@@ -11,6 +11,15 @@ const mysqlConfig = {//define your MYSQL configuration
     user: process.env.MYSQL_USER,
 };
 
+mysqlConfig.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    mysqlConfig.query(sql, function (err,result){
+        if(err) throw err;
+        console.log("Result: " + result);
+    });
+});
+
 const pool = mysql.createPool(mysqlConfig); //create the connection pool
 const router = express.Router();
 
