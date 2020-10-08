@@ -37,6 +37,42 @@ app.use('/profile',profileRouter);
 
 
 
+/* Helper Functions */
+
+function isAuthenticated(req, res, next){
+    if(!req.session.authenticated) res.redirect('/login');
+    else next();
+}
+
+app.get('/post', isAuthenticated, function(req, res){
+   res.render('post');
+});
+
+app.post('/planFlight', isAuthenticated, function(req, res){
+
+  let title  = req.listing_fk0.title; 
+  let photo  = req.listing_fk0.photo_url;
+  let pdescrip = req.listing_fk0.description;
+  let shippingPrice = req.listing_fk0.shippingPrice;
+  let condition = req.listing_fk0.shippingPrice;
+  let price = req.listing_fk0.price;
+  let gameId = req.listing_fk0.game_id;
+
+
+
+  let stmt = 'INSERT INTO listing_fk0 (user_id, game_id, photo_url, condition, description, shippingPrice, price,title) VALUES (?,?,?,?,?,?)';
+  let data = [user_id,gameId,photo,condition,pdescrip,shippingPrice,price,title];
+  let con = herokuConnection();
+  con.query(stmt, data, function(error, result){
+     if(error) throw error;
+     con.end();
+     res.redirect('/post');
+  });
+});
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

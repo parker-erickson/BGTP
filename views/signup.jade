@@ -2,4 +2,22 @@ extends templates/layout
 
 block content
   
-  p Welcome to #{title}
+
+   body
+    h1 Sign up!
+    
+    |   
+    |   
+    |   
+    |   
+    form
+      label(for='Uname') User name:
+      br
+      |   
+      input#fname(type='text', Uname='Uname')
+      br
+      |   
+      label(for='Pw') Password:
+      br
+      |     
+      button(type='button') Click Me!

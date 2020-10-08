@@ -1,6 +1,50 @@
 extends templates/layout
 
+
 block content
-  
   p Welcome to #{title}
+ 
+    h1(style='color:white;') New Post
   
+  head
+  body
+  .postHolder
+    .postContainer
+    
+        div
+            
+          form(action='/post', method='POST')
+            | Product Name : 
+            input#add(type='text', name='title', placeholder='Product Name')
+            br
+            br
+            | Photo
+            input#listing(type='image', name='photo', placeholder='imagePlaceHolder.png', style='float:right', width='200', height='100')
+            br
+            br 
+            br
+            br
+            br
+            |         Product Price:   
+            input#listing(type='text', name='price', placeholder='Product Price')
+            br
+            br
+            |         Product Description:     
+            input#listing(type='text', name='description', placeholder='Product Description')
+            br
+            br
+            |         Product Condition:     
+            input#listing(type='text', name='condition', placeholder='condition')
+            br
+            br
+            |         Product shipping price:     
+            input#listing(type='text', name='shipping_price', placeholder='Shipping price')
+            br
+            br
+            |         Product Game ID:     
+            input#listing(type='text', name='game_id', placeholder='Game ID')
+            br
+            br
+            
+            button.btn.btn-success(name='postBtn') POST
+ 

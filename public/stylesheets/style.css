@@ -14,3 +14,17 @@ a {
 .row{
   background-color: red;
 }
+.postContainer{
+  display: flex;
+  border: 5px solid black;
+  border-radius: 5px;
+  justify-content: space-around;
+  background-color: white;
+  padding: 50px;
+  width: 250px;
+  text-align: center;
+  margin: 0 auto;
+}
+.postContainer > form{
+  text-align: left;
+}
