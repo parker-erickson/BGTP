@@ -3,8 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mysql = require('mysql');
 
+
+
+//added-----------
+const mysql = require('mysql');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,26 +18,23 @@ var profileRouter = require('./routes/profile');
 var postRouter = require('./routes/post');
 var signupRouter = require('./routes/signup');
 
-
 var app = express();
 
-if (process.env.JAWSDB_URL) {
-  const connection = mysql.createConnection(process.env.JAWSDB_URL);
-  console.log("jawsdb")
-} else {
-  // create connection
-  console.log("local db")
-  const connection =  mysql.createConnection({
-    host: 'localhost'	,
-    user: 'root',
-    password: 'password',
-    database: 'bgtp',
-  });
-}
+//didnt add:
+//database
+//port wiring
+//opening server and opening listening channel
+var server = app.listen(8081, function() {
+  //opens server on port 3000, does stuff
+});
+
+//--------------------
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -42,15 +42,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+//ADDED-----------
 app.use('/', indexRouter);
 app.use('/login',loginRouter);
-app.use('/userspage', usersRouter);
+app.use('/users', usersRouter);
 app.use('/cart', cartRouter);
 app.use('/post', postRouter);
 app.use('/products',productsRouter);
 app.use('/signup',signupRouter);
 app.use('/profile',profileRouter);
-
+//---------
 
 
 
@@ -68,15 +71,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-//Console output
-app.listen(process.env.PORT, function() {
-  console.log("Express server is running...");
-});
-
-//opening server and opening listening channel
-var server = app.listen(8081, function() {
-  //opens server on port 3000, does stuff
 });
 
 module.exports = app;
