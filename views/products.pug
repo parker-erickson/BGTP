@@ -1,5 +1,13 @@
 extends templates/layout
 
 block content
-  
-  p Welcome to #{title}
+    includes templates/layout
+    html
+      body
+      .card(style='width:400px')
+        img.card-img-top(src='', alt='Game image', style='width:100%')
+        .card-body
+          h4.card-title Game Title
+          p.card-text Game decription
+          a.btn.btn-primary(href='/cart') Add to cart
+          a.btn.btn-primary(href='/') Back

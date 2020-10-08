@@ -43,3 +43,29 @@ router.get('/login', async function(req, res) {
         });
     });
 });
+
+//get title,and description for listing
+router.get('/index', async function(req, res) {
+    var listingList = [];
+    const lisiting = await new Promise((resolve, reject) => {
+        const query = `
+        SELECT *
+        FROM listing
+        ;`;
+
+        pool.query(query, (error, results) => { //execute query
+            if (error) {
+                req.err = error;
+                reject(error);
+            } else {
+                console.log("listing")
+                listingList = {
+                    description:'decription'
+                }
+
+                }
+        });
+    });
+});
+
+//get post details from listing / game
