@@ -24,9 +24,9 @@ var app = express();
 //database
 //port wiring
 //opening server and opening listening channel
-var server = app.listen(8081, function() {
-  //opens server on port 3000, does stuff
-});
+// var server = app.listen(8081, function() {
+//   //opens server on port 3000, does stuff
+// });
 
 //--------------------
 
