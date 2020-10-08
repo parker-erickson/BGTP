@@ -9,6 +9,7 @@ var logger = require('morgan');
 //added-----------
 const mysql = require('mysql');
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/pages/login');
@@ -18,10 +19,27 @@ var profileRouter = require('./routes/profile');
 var postRouter = require('./routes/post');
 var signupRouter = require('./routes/signup');
 
+
 var app = express();
 
-//didnt add:
-//database
+
+
+if (process.env.JAWSDB_URL) {
+  const connection = mysql.createConnection(process.env.JAWSDB_URL);
+  console.log("jawsdb")
+} else {
+  // create connection
+  console.log("local db")
+  const connection =  mysql.createConnection({
+    host: 'localhost'	,
+    user: 'root',
+    password: 'password',
+    database: 'bgtp',
+  });
+}
+
+
+
 //port wiring
 //opening server and opening listening channel
 var server = app.listen(8081, function() {
