@@ -21,8 +21,8 @@ a {
   justify-content: space-around;
   background-color: white;
   padding: 50px;
-  width: 250px;
-  text-align: center;
+  width: 300px;
+  text-align: CENTER;
   margin: 0 auto;
 }
 .postContainer > form{

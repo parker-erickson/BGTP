@@ -60,11 +60,8 @@ function isAuthenticated(req, res, next){
     else next();
 }
 
-app.get('/post', isAuthenticated, function(req, res){
-   res.render('post');
-});
 
-app.post('/planFlight', isAuthenticated, function(req, res){
+app.post('/post', isAuthenticated, function(req, res){
 
   let title  = req.listing_fk0.title; 
   let photo  = req.listing_fk0.photo_url;
