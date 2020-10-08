@@ -73,7 +73,7 @@ app.post('/planFlight', isAuthenticated, function(req, res){
   let condition = req.listing_fk0.shippingPrice;
   let price = req.listing_fk0.price;
   let gameId = req.listing_fk0.game_id;
-
+  //test
 
 
   let stmt = 'INSERT INTO listing_fk0 (user_id, game_id, photo_url, condition, description, shippingPrice, price,title) VALUES (?,?,?,?,?,?)';
@@ -83,7 +83,7 @@ app.post('/planFlight', isAuthenticated, function(req, res){
      if(error) throw error;
      con.end();
      res.redirect('/post');
-  });
+  }); 
 });
 
 
