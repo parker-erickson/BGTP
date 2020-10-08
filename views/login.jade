@@ -2,7 +2,39 @@ extends templates/layout
 
 
 block content
+<<<<<<< HEAD
   p Welcome to #{title}
 
  
  
+=======
+
+  
+  p Welcome to #{title}
+
+    includes templates/layout
+    html
+        body
+            br
+            br
+            #login_box.container.d-flex.justify-content-center
+                #form_login.login-form.shadow.p-3.mb-5.bg-white.rounded
+                    form
+                        h2.text-center Log in
+                        .form-group
+                            label(username) Username
+                            input.form-control(name='username', type='text')
+
+                        br
+
+                        .form-group
+                            label(password) Password
+
+                            input.form-control(name='password', type='password')
+
+                        br
+
+                        .form-group
+                            input.btn.btn-primary.btn-block(type='submit', value='Login', formaction='/action/login')
+
+>>>>>>> 5a6599b816d9d92558bda11f0f07d6e3fcf37b92

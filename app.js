@@ -3,10 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mysql = require('mysql');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
+var loginRouter = require('./routes/pages/login');
 var cartRouter = require('./routes/cart');
 var productsRouter = require('./routes/products');
 var profileRouter = require('./routes/profile');
@@ -15,6 +17,20 @@ var signupRouter = require('./routes/signup');
 
 
 var app = express();
+
+if (process.env.JAWSDB_URL) {
+  const connection = mysql.createConnection(process.env.JAWSDB_URL);
+  console.log("jawsdb")
+} else {
+  // create connection
+  console.log("local db")
+  const connection =  mysql.createConnection({
+    host: 'localhost'	,
+    user: 'root',
+    password: 'password',
+    database: 'bgtp',
+  });
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
