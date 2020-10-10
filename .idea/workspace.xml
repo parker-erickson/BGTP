@@ -10,14 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="7e9c2c65-d603-49aa-afbf-90c492695a89" name="Default Changelist" comment="reinstalled node_modul">
+    <list default="true" id="7e9c2c65-d603-49aa-afbf-90c492695a89" name="Default Changelist" comment="added sql database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/products.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/products.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cart.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +74,7 @@
       <workItem from="1601226878772" duration="57000" />
       <workItem from="1601417414649" duration="1895000" />
       <workItem from="1601527443805" duration="8987000" />
+      <workItem from="1602277715324" duration="2774000" />
     </task>
     <task id="LOCAL-00001" summary="gernerated express application">
       <created>1600989710775</created>
@@ -133,17 +129,8 @@
       <screen x="38" y="23" width="1402" height="877" />
     </state>
     <state x="742" y="247" key="EditFileWatcherDialog/38.23.1402.877@38.23.1402.877" timestamp="1601934691551" />
-
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602189086281">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1602189086281" />
-    <state x="0" y="89" key="SettingsEditor" timestamp="1602133101266">
-      <screen x="0" y="0" width="1440" height="900" />
-
     <state width="849" height="197" key="GridCell.Tab.0.bottom" timestamp="1602192287773">
       <screen x="0" y="0" width="1536" height="824" />
-
     </state>
     <state width="849" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602192287773" />
     <state width="849" height="197" key="GridCell.Tab.0.center" timestamp="1602192287772">
@@ -163,9 +150,10 @@
     </state>
     <state x="337" y="201" key="Vcs.Push.Dialog.v2/37.23.1403.877@37.23.1403.877" timestamp="1600989721458" />
     <state x="773" y="311" key="Vcs.Push.Dialog.v2/980.1463.1440.877/48.23.3392.1417@48.23.3392.1417" timestamp="1601226838135" />
-    <state x="1263" y="729" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601589980239">
-      <screen x="48" y="23" width="3392" height="1417" />
+    <state x="550" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602277733775">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="550" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1602277733775" />
     <state x="1263" y="729" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/980.1463.1440.877/48.23.3392.1417@48.23.3392.1417" timestamp="1601589980239" />
     <state x="467" y="357" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600987744577">
       <screen x="37" y="23" width="1403" height="877" />
