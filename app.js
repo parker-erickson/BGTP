@@ -5,12 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //added-----------
-const mysql = require('mysql');
+
 const bcrypt = require('bcrypt')
 const passport = require('passport')
-const flash = require('express-flash')
-const session = require('express-session')
-const methodOverride = require('method-override')
+
+// const flash = require('express-flash') I will use these in the login and register
+// const session = require('express-session')
+// const methodOverride = require('method-override')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -23,30 +24,7 @@ const signupRouter = require('./routes/signup');
 
 const app = express();
 
-let connection
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-  console.log("jawsdb")
-} else {
-  // create connection
-  console.log("local db")
-  connection =  mysql.createConnection({
-    host: 'localhost'	,
-    user: 'root',
-    password: 'carcassonne',
-    database: 'bgtp',
-  });
-}
-
-connection.connect( (error) => {
-  if(error) {
-    console.log(error)
-  } else {
-    console.log("MYSQL Connected!")
-  }
-})
-
-
+require('./database/connection')
 
 //--------------------
 
@@ -143,7 +121,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
