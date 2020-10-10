@@ -3,13 +3,13 @@ const request = require('request');
 const moment = require('moment');
 const mysql  = require('mysql'); //require the mysql package
 
-const mysqlConfig = {//define your MYSQL configuration
-    database: process.env.MYSQL_DATABASE, //env variable
-    host: process.env.MYSQL_HOST,
-    password: process.env.MYSQL_PASSWORD,
-    port: 3306,
-    user: process.env.MYSQL_USER,
-};
+// const mysqlConfig = {//define your MYSQL configuration
+//     database: process.env.MYSQL_DATABASE, //env variable
+//     host: process.env.MYSQL_HOST,
+//     password: process.env.MYSQL_PASSWORD,
+//     port: 3306,
+//     user: process.env.MYSQL_USER,
+// };
 
 mysqlConfig.connect(function(err) {
     if (err) throw err;

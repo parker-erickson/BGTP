@@ -10,9 +10,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e9c2c65-d603-49aa-afbf-90c492695a89" name="Default Changelist" comment="added sql database">
+
+    <list default="true" id="7e9c2c65-d603-49aa-afbf-90c492695a89" name="Default Changelist" comment="adding jawsdb">
+      <change afterPath="$PROJECT_DIR$/passport-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cart.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.pug" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +63,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/database" />
     </key>
@@ -97,7 +108,49 @@
       <option name="project" value="LOCAL" />
       <updated>1601226815154</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="i hope this works">
+      <created>1602135410445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602135410445</updated>
+    </task>
+    <task id="LOCAL-00005" summary="uninstalled nodemon">
+      <created>1602171066660</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602171066660</updated>
+    </task>
+    <task id="LOCAL-00006" summary="uninstalled nodemon">
+      <created>1602171072665</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602171072665</updated>
+    </task>
+    <task id="LOCAL-00007" summary="testing">
+      <created>1602171494746</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602171494746</updated>
+    </task>
+    <task id="LOCAL-00008" summary="reinstalled node_modules">
+      <created>1602172272930</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602172272930</updated>
+    </task>
+    <task id="LOCAL-00009" summary="adding jawsdb">
+      <created>1602173165602</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602173165602</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +171,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gernerated express application" />
     <MESSAGE value="added sql database" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sql database" />
+
+    <MESSAGE value="i hope this works" />
+    <MESSAGE value="uninstalled nodemon" />
+    <MESSAGE value="testing" />
+    <MESSAGE value="reinstalled node_modules" />
+    <MESSAGE value="adding jawsdb" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding jawsdb" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1202" y="393" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600986928142">
@@ -132,6 +191,9 @@
     <state width="849" height="197" key="GridCell.Tab.0.bottom" timestamp="1602192287773">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="0" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1602133101266" />
+    <state x="764" y="311" key="Vcs.Push.Dialog.v2" timestamp="1602173175350">
+      <screen x="37" y="23" width="3403" height="1417" />
     <state width="849" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602192287773" />
     <state width="849" height="197" key="GridCell.Tab.0.center" timestamp="1602192287772">
       <screen x="0" y="0" width="1536" height="824" />
@@ -149,6 +211,13 @@
       <screen x="48" y="23" width="3392" height="1417" />
     </state>
     <state x="337" y="201" key="Vcs.Push.Dialog.v2/37.23.1403.877@37.23.1403.877" timestamp="1600989721458" />
+    <state x="764" y="311" key="Vcs.Push.Dialog.v2/980.1463.1440.877/37.23.3403.1417@37.23.3403.1417" timestamp="1602173175350" />
+    <state x="773" y="311" key="Vcs.Push.Dialog.v2/980.1463.1440.877/48.23.3392.1417@48.23.3392.1417" timestamp="1601226838135" />
+    <state x="1263" y="729" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602294897155">
+      <screen x="48" y="23" width="3392" height="1417" />
+    </state>
+    <state x="1256" y="729" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/980.1463.1440.877/37.23.3403.1417@37.23.3403.1417" timestamp="1602290194500" />
+    <state x="1263" y="729" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/980.1463.1440.877/48.23.3392.1417@48.23.3392.1417" timestamp="1602294897155" />
     <state x="773" y="311" key="Vcs.Push.Dialog.v2/980.1463.1440.877/48.23.3392.1417@48.23.3392.1417" timestamp="1601226838135" />
     <state x="550" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602277733775">
       <screen x="0" y="0" width="1536" height="824" />
