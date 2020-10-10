@@ -15,8 +15,8 @@ block content
                     form
                         h2.text-center Log in
                         .form-group
-                            label(username) Username
-                            input.form-control(name='username', type='text')
+                            label(email) Email
+                            input.form-control(name='email', type='text')
 
                         br
 
@@ -28,5 +28,5 @@ block content
                         br
 
                         .form-group
-                            input.btn.btn-primary.btn-block(type='submit', value='Login', formaction='/action/login')
+                            input.btn.btn-primary.btn-block(type='submit', value='Login', formaction='/login', formmethod='POST')
 
