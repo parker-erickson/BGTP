@@ -1,51 +1,83 @@
 extends templates/layout
 
-
 block content
-  p Welcome to #{title}
- 
-    h1(style='color:white;') New Post
-  
-  head
-  body
-  .postHolder
-    .postContainer
+
+  script.
+        $(document).ready(function(){
+        // call the searchfunction when button is clicked.
+        $("#searchButton").on("click", function(){
+        search()})
+        // random words for start up
+        var words = ["Risk","Monopoly","Scrabble","Clue","CandyLand","Chess","battleship",''];
+        var ran= Math.floor(Math.random() * 7)
+        $("#keyword").val(words[ran]);
+        search();
+        function search(){
+        $.ajax({
+        method: "GET",
+        url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",
+        dataType: "json",
+        data: { "key":"9430267d3f695145f51c2c6b780f44fa", "q" : $("#keyword").val()},
+        success: function(result,status) {
+       
+        $("#images").html(`<img src= ' ${result.games[0].images.large}
+        ' width ='110' height = '200' class = "pic">`);
+        }
+        
+        });//ajax
+        } // search()
+        });  // document.ready
+        
+  body.text-center
+  .container1
+    div 
+      .imagesearch
+    h1(style='color: gray') New Post
+      br
+      br
+      |         
+      label Game Search:
+      input#keyword(type='text')
+      |         
+      |         
+      div
+        |         
+        button#searchButton Search
+      #frame
+        #images.frame(style='auto')
+
+   
     
-        div
-            
-          form(action='/post', method='POST')
+    
+    div
+    .postContainer
+     
+      
+       form(action='/post', method='POST')
             | Product Name : 
-            input#add(type='text', name='title', placeholder='Product Name')
-            br
-            br
-            | Photo
-            input#listing(type='image', name='photo', placeholder='imagePlaceHolder.png', style='float:right', width='200', height='100')
-            br
-            br 
-            br
-            br
+            input#listingTable(type='text', name='title', placeholder='Product Name')
             br
             br
             |         Product Price:   
-            input#listing(type='text', name='price', placeholder='Product Price')
+            input#listingTable(type='text', name='price', placeholder='Product Price')
             br
             br
             |         Product Description:     
-            input#listing(type='text', name='description', placeholder='Product Description')
+            input#listingTable(type='text', name='description', placeholder='Product Description')
             br
             br
             |         Product Condition:     
-            input#listing(type='text', name='condition', placeholder='condition')
+            input#listingTable(type='text', name='condition', placeholder='condition')
             br
             br
             |         Product shipping price:     
-            input#listing(type='text', name='shipping_price', placeholder='Shipping price')
+            input#listingTable(type='text', name='shipping_price', placeholder='Shipping price')
             br
             br
             |         Product Game ID:     
-            input#listing(type='text', name='game_id', placeholder='Game ID')
+            input#listingTable(type='text', name='game_id', placeholder='Game ID')
             br
             br
-            
-            button.btn.btn-success(name='postBtn') SUBMIT POST
- 
+            |
+       a.button.btn.btn-success(name='postBtn' href='/profile') SUBMIT POST
+         

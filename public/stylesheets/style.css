@@ -11,14 +11,10 @@ body {
 a {
   color: #00B7FF;
 }
-.row{
-  background-color: red;
-<<<<<<< HEAD
-}
+
 .postContainer{
   display: flex;
-  border: 5px solid black;
-  border-radius: 5px;
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: white;
   padding: 50px;
@@ -26,8 +22,29 @@ a {
   text-align: CENTER;
   margin: 0 auto;
 }
-.postContainer > form{
-  text-align: left;
-=======
->>>>>>> c29c1335ceba9c10675c5485a92b40f8832d0d9f
+
+/*.column {*/
+/*  border-radius: 50px;*/
+/*  display: center;*/
+/*  flex-wrap: wrap;*/
+
+/*  width: 50%;*/
+ 
+/*  width: 200px;*/
+/*  height: 150px;*/
+/*  padding: 25px 120px 50px 10px;*/
+ 
+
+
+.frame {
+  display: center;
+  flex-wrap: center;
+  justify-content: space-around;
+  
+  
+}
+.container1 {
+  display: flex;
+  float: left;
+  
 }
