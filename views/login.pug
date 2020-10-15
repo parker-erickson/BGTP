@@ -3,7 +3,7 @@ extends templates/layout
 block content
 
 
-  p Welcome to #{title}
+    p Welcome to #{title}
 
     includes templates/layout
     html
@@ -12,37 +12,20 @@ block content
             br
             #login_box.container.d-flex.justify-content-center
                 #form_login.login-form.shadow.p-3.mb-5.bg-white.rounded
-                    form
-                        //h2.text-center Log in
-                        //.form-group
-                        //    label(email) Email
-                        //    input.form-control(name='email', type='text')
-                        //
-                        //br
-                        //
-                        //.form-group
-                        //    label(password) Password
-                        //
-                        //    input.form-control(name='password', type='password')
-                        //
-                        //br
-                        //
-                        //.form-group
-                        //    input.btn.btn-primary.btn-block(type='submit', value='Login', formaction='/login', formmethod='POST')
 
-                        h1 Login
-                        script.
-                            if (messeges.error) {
-                                messages.error
-                            }
-                        form(action='/login' method='post')
-                            div
-                            .form_group
-                                label(for='email') Email
-                                input#email(type='text' name='email' required='')
-                            div
-                                label(for='password') Password
-                                input#password(type='text' name='password' required='')
-                            button(type='submit') Login
-                        a(href='/register') Register
+            div.text-center
+                h1 Login
+                form(action='./auth/login' method='POST')
+                    div(class="form-group")
+                        label(for='email') Email
+                        input#email(type='text' class="form-control" name='email' required='')
+                    div(class="form-group")
+                        label(for='password') Password
+                        input#password(type='password' class="form-control" name='password' required='')
+                    button(type='submit' class='btn btn-primary') Submit
+                    if message
+                        .alert.alert-danger #{message}
+                a(href='/login') Login
+
+
 

@@ -2,7 +2,7 @@ extends templates/layout
 
 block content
 
-  
+
   p Welcome to #{title}
 
   includes templates/layout
@@ -12,33 +12,28 @@ block content
       br
       #login_box.container.d-flex.justify-content-center
         #form_login.login-form.shadow.p-3.mb-5.bg-white.rounded
-          form
-            //h2.text-center Log in
-            //.form-group
-            //  label(username) Username
-            //  input.form-control(name='username', type='text')
-            //br
-            //.form-group
-            //  label(password) Password
-            //  input.form-control(name='password', type='password')
-            //br
-            //h2.text-center Log in
-            //.form-group
-            //  label(email) Username
-            //  input.form-control(name='email', type='email')
-            //br
-            //.form-group
-            //  input.btn.btn-primary.btn-block(type='submit', value='Sign Up', formaction='/action/login')
-            h1 Register
-            form(action='/register' method='post')
-              div
-                label(for='name') Name
-                input#name(type='text' name='name' required='')
-              div
-                label(for='email') Email
-                input#email(type='text' name='email' required='')
-              div
-                label(for='password') Password
-                input#password(type='text' name='password' required='')
-              button(type='submit') Submit
-            a(href='/login') Login
+
+      div.text-center
+        h1 Register
+        form(action='./auth/register' method='POST')
+          div(class="form-group")
+            label(for='name') Name
+            input#name(type='text' class="form-control" name='name' required='')
+          div(class="form-group")
+            label(for='email') Email
+            input#email(type='text' class="form-control" name='email' required='')
+          div(class="form-group")
+            label(for='phonenumber') Phone Number
+            input#phonenumber(type='text' class="form-control" name='phonenumber' required='')
+          div(class="form-group")
+            label(for='password') Password
+            input#password(type='password' class="form-control" name='password' required='')
+          div(class="form-group")
+            label(for='password') Confirm Password
+            input#passwordConf(type='password' class="form-control" name='passwordConf' required='')
+          button(type='submit' class='btn btn-primary') Submit
+          if message
+              .alert.alert-danger #{message}
+        a(href='/login') Login
+
+
