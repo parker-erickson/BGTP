@@ -3,14 +3,13 @@ const request = require('request');
 const moment = require('moment');
 const mysql  = require('mysql'); //require the mysql package
 
-// const mysqlConfig = {//define your MYSQL configuration
-//     database: process.env.MYSQL_DATABASE, //env variable
-//     host: process.env.MYSQL_HOST,
-//     password: process.env.MYSQL_PASSWORD,
-//     port: 3306,
-//     user: process.env.MYSQL_USER,
-// };
-
+//const mysqlConfig = {//define your MYSQL configuration
+// database: process.env.MYSQL_DATABASE, //env variable
+//  host: 127.0.0.1,
+//  password: carcassonne,
+//  port: 3306,
+//  user:root
+//  };
 mysqlConfig.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
@@ -20,7 +19,7 @@ mysqlConfig.connect(function(err) {
     });
 });
 
-const pool = mysql.createPool(mysqlConfig); //create the connection pool
+//const pool = mysql.createPool(mysqlConfig); //create the connection pool
 const router = express.Router();
 
 router.get('/login', async function(req, res) {
@@ -46,7 +45,7 @@ router.get('/login', async function(req, res) {
 
 //get title,and description for listing
 router.get('/index', async function(req, res) {
-    var listingList = [];
+    let listingList = [];
     const lisiting = await new Promise((resolve, reject) => {
         const query = `
         SELECT *
@@ -60,7 +59,10 @@ router.get('/index', async function(req, res) {
             } else {
                 console.log("listing")
                 listingList = {
-                    description:'decription'
+                    description: 'description',
+                    photo_url: 'image',
+                    id: 'listingID',
+                    game_id:'title'
                 }
 
                 }
@@ -68,4 +70,3 @@ router.get('/index', async function(req, res) {
     });
 });
 
-//get post details from listing / game

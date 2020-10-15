@@ -6,12 +6,70 @@ block content
       body
       .card-deck.d-flex.justify-content-center
       .card(style='width:400px')
-        img.card-img-top(src='', alt='Game image', style='width:100%')
+        img.card-img-top#image
         .card-body
-          h4.card-title game tile
-          p.description.description
+          h4.#title
+          p.#description
+          p.#genre
+          p.#listingID
           a.btn.btn-primary(href='/cart') Add to cart
           a.btn.btn-primary(href='/products') More
 
       br
+
+script.
+    //TODO: get ajax call to connect to DB call from action.js ?
+
+    //get image
+    function fillImage (listing) {
+    const image = document.getElementById("image");
+    listing.forEach(listing => {
+        image.innerHTML = listing.image;
+            });
+    }
+
+
+    //get the title
+     function fillTitle (listing) {
+       const title = document.getElementById("title");
+       listing.forEach(listing => {
+            title.innerHTML = listing.title;
+
+       });
+     }
+
+     //get the id for listing (needed for when clicking to products listing_id
+     function fillListingID (listing) {
+        const listingID = document.getElementById("listingID");
+        listing.forEach(listing => {
+            listingID.innerHTML = listing.id;
+            });
+            }
+
+    // get the description
+     function fillDescription(listing) {
+       const description = document.getElementById("description");
+       listing.forEach(listing => {
+            description.innerHTML = listing.description
+
+       });
+
+     }
+
+    //for search purposes get genre
+     function fillGenre(listing) {
+       const genre = document.getElementById("genre");
+       listing.forEach(listing => {
+           genre.innerHTML = listing.genre
+
+       });
+     }
+
+     //call each func to load the data and populate the page
+    fillImage([]);
+    fillTitle([]);
+    fillDescription([]);
+    fillGenre([]);
+    fillListingID([]);
+
 
