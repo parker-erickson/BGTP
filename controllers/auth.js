@@ -17,6 +17,7 @@ if (process.env.JAWSDB_URL) {
     });
 }
 
+let user_id
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -28,6 +29,7 @@ exports.login = async (req, res) => {
         }
         connection.query('SELECT * FROM user WHERE email = ?', [email], async(error, results) => {
             console.log(results);
+            let user_id = results[0].user_id;
             if ( !results || !(await bcrypt.compare(password, results[0].password)) ){
                 res.status(401).render('login', {
                     message: 'Email or password is incorrect'
@@ -73,6 +75,8 @@ exports.register = (req, res) => {
             });
         }
 
+        res.redirect('/register')
+
         let hashedPassword = await bcrypt.hash(password, 10)
         console.log(hashedPassword);
 
@@ -87,5 +91,4 @@ exports.register = (req, res) => {
             }
         })
     })
-    res.redirect('/login')
 }
