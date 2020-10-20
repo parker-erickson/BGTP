@@ -17,7 +17,7 @@ if (process.env.JAWSDB_URL) {
     });
 }
 
-let user_id
+let id
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -29,13 +29,12 @@ exports.login = async (req, res) => {
         }
         connection.query('SELECT * FROM user WHERE email = ?', [email], async(error, results) => {
             console.log(results);
-            let user_id = results[0].user_id;
             if ( !results || !(await bcrypt.compare(password, results[0].password)) ){
                 res.status(401).render('login', {
                     message: 'Email or password is incorrect'
                 })
             } else {
-                const id = results[0].id;
+                id = results[0].id;
 
                 const token = jwd.sign({ id }, process.env.JWT_SECRET, {
                     expiresIn: process.env.JWT_EXPIRES_IN
