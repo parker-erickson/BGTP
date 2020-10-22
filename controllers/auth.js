@@ -89,3 +89,30 @@ exports.register = (req, res) => {
     })
     res.redirect('/login')
 }
+
+exports.index = async (req, res) => {
+    connection.query('SELECT * FROM listing', async(error, results) => {
+        console.log("doing query")
+        var post = [];
+        if(error){
+            console.log(error);
+        }else{
+            // Loop check on each row
+            for (var i = 0; i < rows.length; i++) {
+
+                // Create an object to save current row's data
+                var list = {
+                    'description':rows[i].description,
+                    'photo_url':rows[i].photo_url,
+                    'price':rows[i].price,
+                    'user_id':rows[i].user_id
+                }
+                // Add object into array
+                post.push(list);
+            }
+
+            // Render index.pug page using array
+            return res.render('index', {post: post});
+        }
+    });
+}
