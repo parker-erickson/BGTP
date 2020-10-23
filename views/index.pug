@@ -1,12 +1,34 @@
 extends templates/layout
 
 block content
-    html
-      body
-          table
-              for post in post
-                  tr
-                    td= post.description
-                    td= post.title
-                    a.btn.btn-primary(href='/products') More
-                    a.btn.btn-primary(href='/cart') Add to Cart
+
+    script.
+        $(document).ready(function(){
+                $.ajax({
+                    method: "GET",
+                    url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",
+                    dataType: "json",
+                    data: { "key":"9430267d3f695145f51c2c6b780f44fa", "q" : $("#keyword").val()},
+                    success: function(result) {
+
+                        for (var i = 0 ; i < 100; i++) {
+                            console.log("got here");
+                            $("#images").append(`
+                                <div>
+                                <img src = ${result.games[i].images.medium}
+                                 </div> `)
+                            console.log(result[0]);
+                        }
+
+                    }
+
+                });//ajax
+           // search()
+        });  // document.ready
+
+    body
+    .container1
+        div
+            .imagesearch
+            #frame
+                #images.frame(style='auto')
