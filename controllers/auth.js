@@ -57,6 +57,11 @@ exports.login = async (req, res) => {
     }
 }
 
+exports.logout = (req, res) => {
+    console.log("LOGGED OUT");
+    res.redirect('/login');
+}
+
 exports.register = (req, res) => {
     const { name, email, phonenumber, password, passwordConf } = req.body;
 

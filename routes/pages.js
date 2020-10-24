@@ -14,6 +14,11 @@ router.get('/login', (req, res) => {
     res.render('login', {title: "Login"})
 })
 
+router.get('/logout', (req, res) => {
+    res.render('login', {title: "Login"})
+
+})
+
 router.get('/cart', (req, res) => {
     res.render('cart', {title: "Shopping Cart"})
 })
