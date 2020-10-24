@@ -1,17 +1,34 @@
 extends templates/layout
 
 block content
-    includes templates/layout
-    html
-      body
-      .card-deck.d-flex.justify-content-center
-      .card(style='width:400px')
-        img.card-img-top(src='', alt='Game image', style='width:100%')
-        .card-body
-          h4.card-title game tile
-          p.description.description
-          a.btn.btn-primary(href='/cart') Add to cart
-          a.btn.btn-primary(href='/products') More
 
-      br
+    script.
+        $(document).ready(function(){
+                $.ajax({
+                    method: "GET",
+                    url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",
+                    dataType: "json",
+                    data: { "key":"9430267d3f695145f51c2c6b780f44fa", "q" : $("#keyword").val()},
+                    success: function(result) {
 
+                        for (var i = 0 ; i < 100; i++) {
+                            console.log("got here");
+                            $("#images").append(`
+                                <div>
+                                <img src = ${result.games[i].images.medium}
+                                 </div> `)
+                            console.log(result[0]);
+                        }
+
+                    }
+
+                });//ajax
+           // search()
+        });  // document.ready
+
+    body
+    .container1
+        div
+            .imagesearch
+            #frame
+                #images.frame(style='auto')

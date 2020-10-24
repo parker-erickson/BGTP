@@ -95,4 +95,9 @@ exports.register = (req, res) => {
             }
         })
     })
+
+    res.redirect('/login')
 }
+
+
+
