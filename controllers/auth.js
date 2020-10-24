@@ -17,6 +17,7 @@ if (process.env.JAWSDB_URL) {
     });
 }
 
+let id
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -33,7 +34,7 @@ exports.login = async (req, res) => {
                     message: 'Email or password is incorrect'
                 })
             } else {
-                const id = results[0].id;
+                id = results[0].id;
 
                 const token = jwd.sign({ id }, process.env.JWT_SECRET, {
                     expiresIn: process.env.JWT_EXPIRES_IN
@@ -56,6 +57,11 @@ exports.login = async (req, res) => {
     }
 }
 
+exports.logout = (req, res) => {
+    console.log("LOGGED OUT");
+    res.redirect('/login');
+}
+
 exports.register = (req, res) => {
     const { name, email, phonenumber, password, passwordConf } = req.body;
 
@@ -73,6 +79,8 @@ exports.register = (req, res) => {
             });
         }
 
+        res.redirect('/register')
+
         let hashedPassword = await bcrypt.hash(password, 10)
         console.log(hashedPassword);
 
@@ -87,7 +95,9 @@ exports.register = (req, res) => {
             }
         })
     })
+
     res.redirect('/login')
 }
+
 
 
