@@ -99,5 +99,16 @@ exports.register = (req, res) => {
     res.redirect('/login')
 }
 
+exports.index = async (req, res) => {
+    connection.query('SELECT * FROM listing', async(error, results,fields) => {
+        console.log("doing query");
+        if(error){
+            console.log(error);
+        }else{
+            console.log("getting results");
+            res.render('index', {listing:results});
+        }
+    });
+}
 
 

@@ -1,72 +1,28 @@
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            method: "GET",
-            url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",
-            dataType: "json",
-            data: {
-                "key": "9430267d3f695145f51c2c6b780f44fa",
-                "q": $("#keyword").val()
-            },
-            success: function(result) {
-
-                for (var i = 0; i < 100; i++) {
-                    console.log("got here");
-                    $("#images").append(`
-                          <div>
-                          <img src = ${result.games[i].images.medium}
-                           </div> `)
-                    console.log(result[0]);
-                }
-
-            }
-
-        }); //ajax
-        // search()
-    }); // document.ready
-</script>
-
-<body></body>
-<div class="container1">
-    <div>
-        <div class="imagesearch"></div>
-        <div id="frame">
-            <div class="frame" id="images"></div>
+<!-- Card -->
+    <div class="card" style="width: 18rem;">
+       <!--<img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body", id="cardBody">
+            {{#each list}}
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <p class = "card-text">{{this.price}}</p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+            <a href="#" class="btn btn-primary">More</a>
+            {{/each}}
         </div>
     </div>
-</div>
 
-<!--extends templates/layout-->
-
-<!--block content-->
-
-<!--    script.-->
-<!--        $(document).ready(function(){-->
-<!--                $.ajax({-->
-<!--                    method: "GET",-->
-<!--                    url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",-->
-<!--                    dataType: "json",-->
-<!--                    data: { "key":"9430267d3f695145f51c2c6b780f44fa", "q" : $("#keyword").val()},-->
-<!--                    success: function(result) {-->
-
-<!--                        for (var i = 0 ; i < 100; i++) {-->
-<!--                            console.log("got here");-->
-<!--                            $("#images").append(`-->
-<!--                                <div>-->
-<!--                                <img src = ${result.games[i].images.medium}-->
-<!--                                 </div> `)-->
-<!--                            console.log(result[0]);-->
-<!--                        }-->
-
-<!--                    }-->
-
-<!--                });//ajax-->
-<!--           // search()-->
-<!--        });  // document.ready-->
-
-<!--    body-->
-<!--    .container1-->
-<!--        div-->
-<!--            .imagesearch-->
-<!--            #frame-->
-<!--                #images.frame(style='auto')-->
+<!--
+<script type="text/javascript">
+    var posting = 10 // Used to ensure that we always have 10 posts on the front
+    $(document).ready(function() {
+            if(posting < 100) {
+                posting++; //increment the count
+                var spanIdName = "post" + posting; // create the id string
+                $("#cardBody").append('<div class="form-group col-md-6">\n' +
+                      </div>')
+                console.log(spanIdName + " created");
+            } // end of if statement
+        });
+</script>
+-->
