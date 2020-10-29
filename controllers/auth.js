@@ -99,5 +99,24 @@ exports.register = (req, res) => {
     res.redirect('/login')
 }
 
+exports.showCart = (req,res) => {
+    //query for values
+    const query = `
+    SELECT *
+    FROM shopping_cart
+    WHERE user_id = ${id}`;
+
+    let sql = 'SELECT * FROM shopping_cart';
+    let items = connection.query(query, (error, results, fields) => {
+        if(error) {
+            return cosole.error(error.message);
+        }
+        console.log(results);
+    });
+
+    res.render('cart', { title: 'cart page', items: items });
+
+}
+
 
 
