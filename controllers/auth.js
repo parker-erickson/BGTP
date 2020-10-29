@@ -99,14 +99,16 @@ exports.register = (req, res) => {
     res.redirect('/login')
 }
 
-exports.index = async (req, res) => {
+exports.home = async (req, res) => {
+    console.log("Before query");
+
     connection.query('SELECT * FROM listing', async(error, results,fields) => {
-        console.log("doing query");
+        console.log("Doing query");
         if(error){
             console.log(error);
         }else{
             console.log("getting results");
-            res.render('index', {listing:results});
+            res.render('home', {listing:results});
         }
     });
 }

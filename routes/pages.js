@@ -31,12 +31,12 @@ router.get('/post', (req, res) => {
     res.render('post', {title: "Post"})
 })
 
-router.get('/products', (req, res) => {
-    res.render('products', {title: "Products"})
-})
-
 router.get('/profile', (req, res) => {
     res.render('profile', {title: "Profile"})
+})
+
+router.get('/home', (req, res) => {
+    res.render('home', {title: "Home"})
 })
 
 module.exports = router;
