@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/register', (req, res) => {
-    res.render('register', {title: "Registration"})
+    res.render('register.hbs', {title: "Registration"})
 })
 
 router.get('/login', (req, res) => {
@@ -16,7 +16,6 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
     res.render('login', {title: "Login"})
-
 })
 
 router.get('/error', (req, res) => {
