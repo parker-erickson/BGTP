@@ -45,19 +45,20 @@ exports.login = async (req, res) => {
             } else {
                 const id = results[0].id;
 
-                const token = jwd.sign({id}, process.env.JWT_SECRET, {
-                    expiresIn: process.env.JWT_EXPIRES_IN
-                });
+                // const token = jwd.sign({id}, process.env.JWT_SECRET, {
+                //     expiresIn: process.env.JWT_EXPIRES_IN
+                // });
+                //
+                // console.log("The token is: " + token);
 
-                console.log("The token is: " + token);
-
-                const cookieOptions = {
-                    expires: new Date(
-                        Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
-                    ),
-                    httpOnly: true
-                }
-                res.cookie('jwt', token, cookieOptions);
+                // const cookieOptions = {
+                //     expires: new Date(
+                //         Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
+                //     ),
+                //     httpOnly: true
+                // }
+                // res.cookie('jwt', token, cookieOptions);
+                req.session.user_id = id
                 res.status(200).redirect("/");
             }
         });
@@ -66,8 +67,17 @@ exports.login = async (req, res) => {
     }
 }
 exports.logout = (req, res) => {
-    console.log("LOGGED OUT");
-    res.redirect('/login');
+    if(req.session.user_id == null){
+        res.render('login', {
+            message: 'Must be logged in to log out.'
+        })
+    } else {
+        console.log("LOGGED OUT");
+        req.session.destroy();
+        res.render("login", {
+            message: 'Successfully logged out'
+        });
+    }
 }
 
 exports.register = (req, res) => {
@@ -86,21 +96,27 @@ exports.register = (req, res) => {
             return res.render('register', {
                 message: 'Passwords do not match.'
             });
+        } else {
+
+            let hashedPassword = await bcrypt.hash(password, 10);
+
+            connection.query('INSERT INTO user SET ?', {
+                username: name,
+                email: email,
+                phone_number: phonenumber,
+                password: hashedPassword
+            }, (error, results) => {
+                if (error) {
+                    console.log("THIS IS THE ERROR: " + error);
+                    return;
+                } else {
+                    console.log(results);
+                    return res.render('register', {
+                        message: 'User registered!'
+                    });
+                }
+            })
         }
-
-        let hashedPassword = await bcrypt.hash(password, 10);
-
-        connection.query('INSERT INTO user SET ?', {username: name, email: email, phone_number: phonenumber, password: hashedPassword}, (error, results) => {
-            if(error) {
-                console.log("THIS IS THE ERROR: " + error);
-                return;
-            } else {
-                console.log(results);
-               return res.render('register', {
-                   message: 'User registered!'
-               });
-            }
-        })
     })
     //
     // res.redirect('/login')

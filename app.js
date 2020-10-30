@@ -7,6 +7,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('express-handlebars');
+const session = require('express-session');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.static(publicDirectory))
 
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+app.use(session({ secret: process.env.SECRET}))
 
 // view engine setup
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'main', layoutsDir: __dirname + '/views/templates/'}));
