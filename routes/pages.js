@@ -19,9 +19,6 @@ router.get('/logout', (req, res) => {
 
 })
 
-router.get('/cart', (req, res) => {
-    res.render('cart', {title: "Shopping Cart"})
-})
 
 router.get('/error', (req, res) => {
     res.render('error', {title: "Error"})
@@ -36,7 +33,8 @@ router.get('/profile', (req, res) => {
 })
 
 router.get('/home', (req, res) => {
-    res.render('home', {title: "Home"})
+    res.render('home', {title: "home"})
 })
+
 
 module.exports = router;

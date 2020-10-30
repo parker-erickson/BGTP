@@ -99,18 +99,22 @@ exports.register = (req, res) => {
     res.redirect('/login')
 }
 
-exports.home = async (req, res) => {
-    console.log("Before query");
+exports.home = (req,res) => {
+    console.log("before query");
+    //query for values
+    const query = `
+    SELECT *
+    FROM listing
+    `;
 
-    connection.query('SELECT * FROM listing', async(error, results,fields) => {
-        console.log("Doing query");
-        if(error){
-            console.log(error);
-        }else{
-            console.log("getting results");
-            res.render('home', {listing:results});
+    let sql = 'SELECT * FROM listing';
+    let items = connection.query(query, (error, results, fields) => {
+        if(error) {
+            return console.error(error.message);
         }
+        console.log(results);
+        return res.render('home', { items: items });
     });
-}
 
+}
 
