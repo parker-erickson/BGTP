@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const jwd = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
+
 let connection
 if (process.env.JAWSDB_URL) {
     console.log("jawsdb")
