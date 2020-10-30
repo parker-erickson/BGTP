@@ -1,72 +1,9 @@
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            method: "GET",
-            url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",
-            dataType: "json",
-            data: {
-                "key": "9430267d3f695145f51c2c6b780f44fa",
-                "q": $("#keyword").val()
-            },
-            success: function(result) {
-
-                for (var i = 0; i < 100; i++) {
-                    console.log("got here");
-                    $("#images").append(`
-                          <div>
-                          <img src = ${result.games[i].images.medium}
-                           </div> `)
-                    console.log(result[0]);
-                }
-
-            }
-
-        }); //ajax
-        // search()
-    }); // document.ready
-</script>
-
-<body></body>
-<div class="container1">
-    <div>
-        <div class="imagesearch"></div>
-        <div id="frame">
-            <div class="frame" id="images"></div>
-        </div>
+<div class='container'>
+    <div class='jumbotron'>
+        <h1> Welcome to Board Game Trading Post ! </h1>
+        <form action='./auth/home' method='POST'>
+            <button class='btn btn-info'>Enter</button>
+        </form>
     </div>
 </div>
 
-<!--extends templates/layout-->
-
-<!--block content-->
-
-<!--    script.-->
-<!--        $(document).ready(function(){-->
-<!--                $.ajax({-->
-<!--                    method: "GET",-->
-<!--                    url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",-->
-<!--                    dataType: "json",-->
-<!--                    data: { "key":"9430267d3f695145f51c2c6b780f44fa", "q" : $("#keyword").val()},-->
-<!--                    success: function(result) {-->
-
-<!--                        for (var i = 0 ; i < 100; i++) {-->
-<!--                            console.log("got here");-->
-<!--                            $("#images").append(`-->
-<!--                                <div>-->
-<!--                                <img src = ${result.games[i].images.medium}-->
-<!--                                 </div> `)-->
-<!--                            console.log(result[0]);-->
-<!--                        }-->
-
-<!--                    }-->
-
-<!--                });//ajax-->
-<!--           // search()-->
-<!--        });  // document.ready-->
-
-<!--    body-->
-<!--    .container1-->
-<!--        div-->
-<!--            .imagesearch-->
-<!--            #frame-->
-<!--                #images.frame(style='auto')-->
