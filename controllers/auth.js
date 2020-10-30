@@ -1,7 +1,6 @@
 const mysql = require("mysql");
 const jwd = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const user_id = req.session.user_id;
 
 let connection
 if (process.env.JAWSDB_URL) {
@@ -98,7 +97,7 @@ exports.register = (req, res) => {
 
     res.redirect('/login')
 }
-
+const user_id = req.session.user_id;
 exports.showCart = (req,res) => {
     console.log("before the query");
     //query for values
