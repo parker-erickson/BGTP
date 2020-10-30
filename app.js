@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //define routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
-app.use('/pages',require('./routes/pages'));
+
 
 //opening server and opening listening channel
 app.listen(8081, function() {});

@@ -19,7 +19,6 @@ router.get('/logout', (req, res) => {
 
 })
 
-
 router.get('/error', (req, res) => {
     res.render('error', {title: "Error"})
 })

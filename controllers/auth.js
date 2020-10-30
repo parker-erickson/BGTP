@@ -111,9 +111,10 @@ exports.home = (req,res) => {
     let items = connection.query(query, (error, results, fields) => {
         if(error) {
             return console.error(error.message);
-        }
+        } else {
         console.log(results);
         return res.render('home', { items: items });
+        }
     });
 
 }
