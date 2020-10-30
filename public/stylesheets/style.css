@@ -14,3 +14,16 @@ a {
 .row{
   background-color: red;
 }
+
+.thumbnail img {
+  max-height: 150px
+}
+
+.thumbnail .description {
+  color: crimson;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+}

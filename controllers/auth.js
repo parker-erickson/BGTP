@@ -122,5 +122,23 @@ exports.register = (req, res) => {
     // res.redirect('/login')
 }
 
+exports.home = (req,res) => {
+    console.log("before query");
+    //query for values
+    const query = `
+    SELECT *
+    FROM listing
+    `;
 
+    let sql = 'SELECT * FROM listing';
+    let items = connection.query(query, (error, results, fields) => {
+        if(error) {
+            return console.error(error.message);
+        } else {
+        console.log(results);
+        return res.render('home', { items: items });
+        }
+    });
+
+}
 
