@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const jwd = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const user_id = req.session.user_id;
 
 let connection
 if (process.env.JAWSDB_URL) {
@@ -35,7 +36,6 @@ exports.login = async (req, res) => {
                 })
             } else {
                 id = results[0].id;
-
                 const token = jwd.sign({ id }, process.env.JWT_SECRET, {
                     expiresIn: process.env.JWT_EXPIRES_IN
                 });
@@ -100,11 +100,14 @@ exports.register = (req, res) => {
 }
 
 exports.showCart = (req,res) => {
+    console.log("before the query");
     //query for values
     const query = `
     SELECT *
     FROM shopping_cart
-    WHERE user_id = ${id}`;
+    WHERE user_id = ?`,[user_id],async(error,results) =>{
+
+    }
 
     let sql = 'SELECT * FROM shopping_cart';
     let items = connection.query(query, (error, results, fields) => {
@@ -113,9 +116,7 @@ exports.showCart = (req,res) => {
         }
         console.log(results);
     });
-
-    res.render('cart', { title: 'cart page', items: items });
-
+    return res.render('cart', { title: 'cart page', items: items });
 }
 
 
