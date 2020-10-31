@@ -62,4 +62,8 @@ function checkNotAuthenticated(req, res, next) {
     }
 
     next()
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a78a48b2c02e3a71a8c803d6091ac56fb757bcfb

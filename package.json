@@ -12,7 +12,13 @@
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "force-ssl-heroku": "^1.0.2",
     "http-errors": "~1.6.3",
+<<<<<<< HEAD
     "jquery": "^3.5.1",
     "json": "^10.0.0",
     "morgan": "~1.9.1",
@@ -22,5 +28,15 @@
     "pug": "2.0.0-beta11",
     "pug-linker": "^4.0.0",
     "shuffle": "^0.2.2"
+=======
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "node-pre-gyp": "^0.15.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mysql": "^5.0.10"
+>>>>>>> a78a48b2c02e3a71a8c803d6091ac56fb757bcfb
   }
 }

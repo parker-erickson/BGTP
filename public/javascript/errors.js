@@ -17,4 +17,8 @@ app.use(function(err, req, res) {
     // render the error page
     res.status(err.status || 500);
     res.render('error');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> a78a48b2c02e3a71a8c803d6091ac56fb757bcfb
