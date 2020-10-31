@@ -25,9 +25,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mysql": "^5.0.10",
-    "pug": "2.0.0-beta11"
-  },
-  "devDependencies": {
+    "pug": "2.0.0-beta11",
     "jest": "^26.6.1"
   }
 }
