@@ -131,7 +131,7 @@ exports.showCart = (req,res) => {
         }
         console.log(results);
     });
-    return res.render('cart', { title: 'cart page', items: items });
+    res.render('cart', { title: 'cart page', items: results });
 }
 
 
