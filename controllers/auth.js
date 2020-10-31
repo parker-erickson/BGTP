@@ -204,3 +204,21 @@ exports.post = (req, res) => {
     //
     //   });
 }
+
+exports.showCart = (req,res) => {
+    console.log("before query");
+    //query for values
+    const query = `
+    SELECT *
+    FROM shopping_cart
+    `;
+
+    let items = connection.query(query, (error,results) => {
+        if (error) {
+            return console.error(error.message);
+        } else {
+            console.log("after query rendering results");
+            res.render('home',{items:results});
+        }
+    });
+}
