@@ -32,7 +32,7 @@ exports.login = async (req, res) => {
             if(error) {
                 res.render('login', {
                     bad: true,
-                    message: 'Email not found'
+                    message: error
                 })
             } else if (results.length == 0){
                 res.render('login', {
@@ -94,10 +94,10 @@ exports.register = (req, res) => {
             return;
         }
         if(results.length > 0){
-           return res.render('register', {
-               bad: true,
-               message: 'Email already in use'
-           });
+            return res.render('register', {
+                bad: true,
+                message: 'Email already in use'
+            });
         } else if(password !== passwordConf) {
             return res.render('register', {
                 bad: true,
@@ -151,31 +151,56 @@ exports.home = (req,res) => {
 
 exports.post = (req, res) => {
     console.log("connected");
-    
-    let gameId  = req.body.game_id;
-    let image = req.body.image;
-    let cond = req.body.condition;
-    let pdescr = req.body.productDescription;
-    let shP = req.body.shippingPrice;
-    let price = req.body.price;
-    let title = req.body.title; 
-    
-    let query = 'INSERT INTO listing_fk0 (game_id, photo_url, condition, description, shippingPrice, price, title) VALUES (?,?,?,?,?,?,?)';
-    console.log('hello');
-    let data = [gameId,image,cond,pdescr,shP,price,title];
-  //  let connection = herokuConnection();
-     connection.query(query, data, function(error, result){
-      connection.end();
-     if(error){
-         console.log(error)
-     }
-        else {
-        console.log(result);
-        connection.end();
-        res.redirect('/', {
-            message: 'Post complete!'
-        });
-    }
-        
-    }); 
+
+    const user_id = req.session.user_id;
+    const { title, price, description, condition, shipping_price } = req.body;
+
+    connection.query('INSERT INTO listing SET ?', {
+        user_id: user_id,
+        photo_url: '', // EMPTY FOR NOW
+        condition: condition,
+        description: description,
+        shipping_price: shipping_price,
+        price: price,
+        title: title
+    }, (error, results) => {
+        if (error) {
+            console.log("THIS IS THE ERROR: " + error);
+            return;
+        } else {
+            console.log(results);
+            return res.render('post', {
+                good: true,
+                message: 'listing added!'
+            });
+        }
+    });
+    console.log("after post query")
+    //
+    // let gameId  = req.body.game_id;
+    // let image = req.body.image;
+    // let cond = req.body.condition;
+    // let pdescr = req.body.productDescription;
+    // let shP = req.body.shippingPrice;
+    // let price = req.body.price;
+    // let title = req.body.title;
+
+    //   let query = 'INSERT INTO listing_fk0 (game_id, photo_url, condition, description, shippingPrice, price, title) VALUES (?,?,?,?,?,?,?)';
+    //   console.log('hello');
+    //   let data = [gameId,image,cond,pdescr,shP,price,title];
+    // //  let connection = herokuConnection();
+    //    connection.query(query, data, function(error, result){
+    //     connection.end();
+    //    if(error){
+    //        console.log(error)
+    //    }
+    //       else {
+    //       console.log(result);
+    //       connection.end();
+    //       res.redirect('/', {
+    //           message: 'Post complete!'
+    //       });
+    //   }
+    //
+    //   });
 }
