@@ -1,2 +1,60 @@
-
 <h1>Make a Post</h1>
+
+
+<script>
+  $(document).ready(function(){
+  // call the searchfunction when button is clicked.
+  $("#searchButton").on("click", function(){
+  search()})
+  // random words for start up
+  var words = ["Risk","Monopoly","Scrabble","Clue","CandyLand","Chess","battleship",''];
+  var ran= Math.floor(Math.random() * 7)
+  $("#keyword").val(words[ran]);
+  search();
+  function search(){
+  $.ajax({
+  method: "GET",
+  url: "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=0rymULWyC4&",
+  dataType: "json",
+  data: { "key":"9430267d3f695145f51c2c6b780f44fa", "q" : $("#keyword").val()},
+  success: function(result,status) {
+  
+  $("#images").html(`<img src= ' ${result.games[0].images.large}
+  ' width ='110' height = '200' class = "pic">`);
+  }
+  
+  });//ajax
+  } // search()
+  });  // document.ready
+  
+</script>
+
+
+<body class="text-center"></body>
+  <div class="container1">
+    <div> 
+      <div class="imagesearch"></div>
+    </div>
+     
+    <label>Game Search:</label>
+    <input id="keyword" type="text" value="{{image}}/>        
+            
+    <div>        
+      <button id="searchButton">Search</button>
+    </div>
+    <div id="frame" >
+      <div class="frame" id="images" style="auto"></div>
+    </div>
+  </h1> </div>
+  <div class="postContainer">
+    <form action="/post" method="POST">Product Name : 
+     
+      <input id="listingTable1" type="text" name="title" placeholder="Product Name" value="{{productName}}"/><br/><br/>        Product Price:   
+      <input id="listingTable2" type="text" name="price" placeholder="Product Price" value="{{productPrice}}"/><br/><br/>        Product Description:     
+      <input id="listingTable3" type="text" name="description" placeholder="Product Description" value="{{productDescription}}"/><br/><br/>        Product Condition:     
+      <input id="listingTable4" type="text" name="condition" placeholder="condition" value="{{conditon}}"/><br/><br/>        Product shipping price:     
+      <input id="listingTable5" type="text" name="shipping_price" placeholder="Shipping price" value="{{shippingPrice}}"/><br/><br/>        Product Game ID:     
+      <input id="listingTable6" type="text" name="game_id" placeholder="Game ID" value="{{game_id}}"/><br/><br/>
+    </form><a class="button btn btn-success" name="postBtn" href="/">SUBMIT POST</a>
+  </div>
+</div>

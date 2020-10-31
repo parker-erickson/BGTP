@@ -141,3 +141,33 @@ exports.home = (req,res) => {
 
 }
 
+exports.post = (req, res) => {
+    console.log("connected");
+    
+    let gameId  = req.body.game_id;
+    let image = req.body.image;
+    let cond = req.body.condition;
+    let pdescr = req.body.productDescription;
+    let shP = req.body.shippingPrice;
+    let price = req.body.price;
+    let title = req.body.title; 
+    
+    let query = 'INSERT INTO listing_fk0 (game_id, photo_url, condition, description, shippingPrice, price, title) VALUES (?,?,?,?,?,?,?)';
+    console.log('hello');
+    let data = [gameId,image,cond,pdescr,shP,price,title];
+  //  let connection = herokuConnection();
+     connection.query(query, data, function(error, result){
+      connection.end();
+     if(error){
+         console.log(error)
+     }
+        else {
+        console.log(result);
+        connection.end();
+        res.redirect('/', {
+            message: 'Post complete!'
+        });
+    }
+        
+    }); 
+}
