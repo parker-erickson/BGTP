@@ -11,6 +11,45 @@ body {
 a {
   color: #00B7FF;
 }
+<<<<<<< HEAD
+
+.postContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: white;
+  padding: 50px;
+  width: 300px;
+  text-align: CENTER;
+  margin: 0 auto;
+}
+
+/*.column {*/
+/*  border-radius: 50px;*/
+/*  display: center;*/
+/*  flex-wrap: wrap;*/
+
+/*  width: 50%;*/
+ 
+/*  width: 200px;*/
+/*  height: 150px;*/
+/*  padding: 25px 120px 50px 10px;*/
+ 
+
+
+.frame {
+  display: center;
+  flex-wrap: center;
+  justify-content: space-around;
+  
+  
+}
+.container1 {
+  display: flex;
+  float: left;
+  
+}
+=======
 .row{
   background-color: red;
 }
@@ -27,3 +66,4 @@ a {
   font-weight: bold;
   font-size: 16px;
 }
+>>>>>>> a78a48b2c02e3a71a8c803d6091ac56fb757bcfb
