@@ -32,8 +32,11 @@
             </form><a href="/login">Login</a>
         </div>
     </div>
-    {{#if message }}
+    {{#if bad }}
         <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+    {{#if good }}
+        <h4 class="alert alert-success mt-4">{{message}}</h4>
     {{/if}}
 </div>
 
