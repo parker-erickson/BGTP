@@ -31,15 +31,18 @@ exports.login = async (req, res) => {
             console.log(results);
             if(error) {
                 res.render('login', {
+                    bad: true,
                     message: 'Email not found'
                 })
             } else if (results.length == 0){
                 res.render('login', {
+                    bad: true,
                     message: 'Email not found'
                 })
             }
             else if (!results || !(await bcrypt.compare(password, results[0].password))) {
                 res.render('login', {
+                    bad: true,
                     message: 'Email or password is incorrect'
                 })
             } else {
@@ -69,12 +72,14 @@ exports.login = async (req, res) => {
 exports.logout = (req, res) => {
     if(req.session.user_id == null){
         res.render('login', {
+            bad: true,
             message: 'Must be logged in to log out.'
         })
     } else {
         console.log("LOGGED OUT");
         req.session.destroy();
         res.render("login", {
+            good: true,
             message: 'Successfully logged out'
         });
     }
@@ -90,10 +95,12 @@ exports.register = (req, res) => {
         }
         if(results.length > 0){
            return res.render('register', {
+               bad: true,
                message: 'Email already in use'
            });
         } else if(password !== passwordConf) {
             return res.render('register', {
+                bad: true,
                 message: 'Passwords do not match.'
             });
         } else {
@@ -112,6 +119,7 @@ exports.register = (req, res) => {
                 } else {
                     console.log(results);
                     return res.render('register', {
+                        good: true,
                         message: 'User registered!'
                     });
                 }
