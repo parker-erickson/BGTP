@@ -42,4 +42,4 @@ app.use('/auth', require('./routes/auth'));
 //opening server and opening listening channel
 app.listen(8080, function() {});
 
-module.exports = app.js;
+module.exports = app;
