@@ -34,5 +34,8 @@ router.get('/home', (req, res) => {
     res.render('home', {title: "home"})
 })
 
+router.get('/cart', (req, res) => {
+    res.render('cart', {title: "cart"})
+})
 
 module.exports = router;
