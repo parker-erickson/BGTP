@@ -9,5 +9,6 @@ router.post('/logout', authController.logout);
 router.post('/home', authController.home);
 router.get('/logout', authController.logout);
 router.post('/post', authController.post);
+router.post('/cart', authController.showCart);
 
 module.exports = router;
