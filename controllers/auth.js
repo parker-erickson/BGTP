@@ -126,17 +126,16 @@ exports.home = (req,res) => {
     console.log("before query");
     //query for values
     const query = `
-    SELECT description,price,condition
+    SELECT *
     FROM listing
     `;
 
-    let sql = 'SELECT description,price,condition FROM listing';
-    let items = connection.query(query, (error, results, fields) => {
-        if(error) {
+    let items = connection.query(query, (error,results) => {
+        if (error) {
             return console.error(error.message);
         } else {
-        console.log(results);
-        return res.render('home', { items: items });
+            console.log("after query rendering results");
+            res.render('home',{items:results});
         }
     });
 

@@ -1,15 +1,21 @@
+
 {{#each items}}
-<div class ="row">
-    <div class="col-sm-6 col-md-4">
-        <!--<div class="thumbnail">
-            <div class="caption"> -->
-                <h3>{{this.title}}</h3>
-                <p class="description">Description : {{this.description}}</p>
-                <div class="clearfix">
-                    <p class="Condition">Condition: {{this.condition}}</p>
-                    <div class="price"><p>Price: {{this.price}}</p></div>
-                    <a href="/cart" class="btn btn-danger pull-right" role="button">Add to cart</a>
+    <div class ="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+           <div class="caption">
+            <h3>Game Title : {{this.title}}</h3>
+               <img src = {{this.photo_url}}>
+            <p class="description">Description :{{this.description}}</p>
+            <div class="clearfix">
+                <p class="Condition">Condition: {{this.condition}}</p>
+                <p class="seller">Seller ID:{{this.user_id}}</p>
+                <div class="price"><p>Price: {{this.price}}</p></div>
+                <a href="/cart" class="btn btn-danger pull-right" role="button">Add to cart</a>
+                    </div>
                 </div>
             </div>
-</div>
+        </div>
+    </div>
 {{/each}}
+
