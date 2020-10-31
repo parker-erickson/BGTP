@@ -38,5 +38,4 @@ router.get('/cart', (req, res) => {
     res.render('cart', {title: "cart"})
 })
 
-
 module.exports = router;
