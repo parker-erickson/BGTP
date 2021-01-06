@@ -1,5 +1,5 @@
 {
-  "name": "untitled",
+  "name": "bgtp",
   "version": "1.0.0",
   "private": true,
   "engines": {
@@ -30,5 +30,18 @@
     "passport-local-mysql": "^5.0.10",
     "pug": "2.0.0-beta11",
     "jest": "^26.6.1"
-  }
+  },
+  "description": "web-based application for buying selling and trading boardgames",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parker-erickson/BGTP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parker-erickson/BGTP/issues"
+  },
+  "homepage": "https://github.com/parker-erickson/BGTP#readme"
 }
